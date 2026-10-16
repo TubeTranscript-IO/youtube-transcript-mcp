@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.tubetranscript/ai-tools",
+  "title": "TubeTranscript AI tools",
+  "description": "Chapters, hooks, mindmaps, subtitles and blog drafts from a TubeTranscript job (Pro API key).",
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://tubetranscript.io/api/mcp/tools",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer <Pro API key>, for example: Bearer tt_live_XXXXXXXX. Create the key in the dashboard on the Pro plan.",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.tubetranscript/transcripts",
+  "title": "TubeTranscript",
+  "description": "YouTube transcripts for AI agents, including videos without captions (Pro API key).",
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://tubetranscript.io/api/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer <Pro API key>, for example: Bearer tt_live_XXXXXXXX. Create the key in the dashboard on the Pro plan.",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

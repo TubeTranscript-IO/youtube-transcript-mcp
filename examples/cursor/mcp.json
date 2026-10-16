@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "tubetranscript": {
+      "url": "https://tubetranscript.io/api/mcp",
+      "headers": { "Authorization": "Bearer tt_live_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" }
+    },
+    "tubetranscript-ai": {
+      "url": "https://tubetranscript.io/api/mcp/tools",
+      "headers": { "Authorization": "Bearer tt_live_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" }
+    }
+  }
+}
