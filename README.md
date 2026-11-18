@@ -10,7 +10,7 @@ TubeTranscript is a hosted MCP server that lets AI agents fetch the transcript o
 | Type | Remote MCP server, Streamable HTTP |
 | Hosting | Hosted by TubeTranscript. The server source is not in this repository. |
 | Auth | `Authorization: Bearer <Pro API key>` |
-| Price | Pro plan, $9/month |
+| Price | Pro plan, $4.99/month (Enterprise $19/month) |
 | Registry names | `io.tubetranscript/transcripts`, `io.tubetranscript/ai-tools` |
 
 > This repository holds setup configs, examples and docs only. The server itself is hosted and closed-source, and every tool call needs a Pro API key.
@@ -125,8 +125,8 @@ When a video has no captions, `get_transcript` falls back to audio transcription
 
 | | |
 | --- | --- |
-| Plan | Pro, $9/month. A missing, unknown or non-Pro key gets `402 Payment Required`. |
-| Rate limit | 1,000 tool calls per 24 hours per key, shared with the REST API. `initialize`, `tools/list` and `ping` are free. |
+| Plan | Pro, $4.99/month, or Enterprise. A missing, unknown or non-Pro key gets `402 Payment Required`. |
+| Rate limit | 100 tool calls per 24 hours per team on Pro (up to 30 transcribed from audio), 1,000 on Enterprise, shared with the REST API and all the team's keys. `initialize`, `tools/list` and `ping` are free. |
 | Transport | Stateless Streamable HTTP. `GET` and `DELETE` on the server URL get `405`. |
 | Output | `get_transcript` returns plain text without timestamps. For timed chunks, use the REST API. |
 
@@ -161,7 +161,7 @@ Free open-source servers such as [jkawamoto/mcp-youtube-transcript](https://gith
 | | Open-source servers | TubeTranscript |
 | --- | --- | --- |
 | Where it runs | On your machine, started with `uvx` or `npx` | Hosted: you add a URL and a key |
-| Cost | Free, MIT licence | Pro, $9/month |
+| Cost | Free, MIT licence | Pro, $4.99/month |
 | Videos without captions | Captions and subtitles only, per their READMEs. One adds an optional video-analysis tool that needs a TwelveLabs key. | Falls back to audio transcription |
 | IP blocks | The first README says YouTube blocks cloud and data-centre IPs and shows how to set up your own proxy | No proxy to set up on your side |
 | Timestamps | Timed segments are available through MCP | `get_transcript` returns plain text; timed chunks come from the REST API |
@@ -174,7 +174,7 @@ Choose an open-source server if you only need captions, want it free, or want ti
 Two remote MCP servers that let an AI agent fetch the transcript of a YouTube video and turn it into hooks, chapters, a mindmap, subtitles or a blog draft. You register them once in Claude Code, Cursor, Windsurf or n8n, and the agent calls the tools itself.
 
 **How much does it cost?**
-The MCP servers are part of the Pro plan, $9/month. One Pro API key makes up to 1,000 tool calls per 24 hours, shared with the REST API. See [pricing](https://tubetranscript.io/pricing).
+The MCP servers are part of the Pro plan, $4.99/month: up to 100 tool calls per 24 hours per team, shared with the REST API. Enterprise, $19/month, raises that to 1,000. See [pricing](https://tubetranscript.io/pricing).
 
 **Does get_transcript work for videos without captions?**
 Yes. It reads the captions first. With none, it transcribes the audio and returns status processing; the agent calls it again with the same video after about a minute until the status is completed. Pro covers videos up to 2 hours.
