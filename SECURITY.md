@@ -5,7 +5,7 @@ TubeTranscript MCP servers. The servers themselves are not in this repository.
 
 ## Reporting a vulnerability
 
-Email **mcp@tubetranscript.io** with a description of the problem and the steps
+Email **support@tubetranscript.io** with "Security" in the subject, a description of the problem and the steps
 to reproduce it. Please do not open a public issue for a vulnerability in the
 hosted service. We will reply by email.
 
